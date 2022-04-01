@@ -1,4 +1,3 @@
-import javax.sound.sampled.Line;
 import java.lang.Math;
 
 public class Stack {
@@ -9,19 +8,6 @@ public class Stack {
     public Stack(int lenght){
         this.index = -1;
         this.stack = new int[lenght];
-    }
-
-    public Stack(int[] stack) {
-        this.index = -1;
-        this.stack = stack;
-    }
-
-    public int[] getStack() {
-        return stack;
-    }
-
-    public void setStack(int[] stack) {
-        this.stack = stack;
     }
 
     public void push(int value){
@@ -84,25 +70,13 @@ public class Stack {
 
         for (int i = this.stack.length -1; i >= 0; i--) {
 
-            switch(houses){
-                case 1:
-                    System.out.printf("|%1s%-1d%-1s|\n", "", this.stack[i], "");
-                    break;
-                case 2:
-                    System.out.printf("|%1s%-2d%-1s|\n", "", this.stack[i], "");
-                    break;
-                case 3:
-                    System.out.printf("|%1s%-3d%-1s|\n", "", this.stack[i], "");
-                    break;
-                case 4:
-                    System.out.printf("|%1s%-4d%-1s|\n", "", this.stack[i], "");
-                    break;
-                case 5:
-                    System.out.printf("|%1s%-5d%-1s|\n", "", this.stack[i], "");
-                    break;
-                case 6:
-                    System.out.printf("|%1s%-6d%-1s|\n", "", this.stack[i], "");
-                    break;
+            switch (houses) {
+                case 1 -> System.out.printf("|%1s%-1d%-1s|\n", "", this.stack[i], "");
+                case 2 -> System.out.printf("|%1s%-2d%-1s|\n", "", this.stack[i], "");
+                case 3 -> System.out.printf("|%1s%-3d%-1s|\n", "", this.stack[i], "");
+                case 4 -> System.out.printf("|%1s%-4d%-1s|\n", "", this.stack[i], "");
+                case 5 -> System.out.printf("|%1s%-5d%-1s|\n", "", this.stack[i], "");
+                case 6 -> System.out.printf("|%1s%-6d%-1s|\n", "", this.stack[i], "");
             }
         }
 
@@ -114,9 +88,9 @@ public class Stack {
 
     public void max(){
         this.max = 0;
-        for(int i = 0; i < this.stack.length; i++) {
-            if(this.stack[i] > this.max){
-                this.max = this.stack[i];
+        for (int j : this.stack) {
+            if (j > this.max) {
+                this.max = j;
             }
         }
     }
